@@ -1,0 +1,24 @@
+#include "expr_lexer.h"
+
+./ecc -g gramatica.txt --src .cpp --hdr .h
+
+
+--------------------------------------------------------------------
+fa2lexer --src expr_lexer.cpp --tpl .fa2l
+
+/*!fa2lexer
+
+%option generate.tokens=false;
+%file "expr.jff";
+%generate.state_enum(state);
+*/
+
+symbol ::getnexttoken(){
+
+%generate.lexer(text)
+
+}
+
+const char* tokentostring(stmbol tk){
+    %generate.tostrinig(tk);
+}
